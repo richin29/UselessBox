@@ -1,10 +1,27 @@
 #include "Servo.h"
 
-void TurnOffSwitch( Servo servo_handler )
+unsigned char current_angle = INIT_ANGLE;
+Servo creature_servo;
+
+void CreateCreature( void )
 {
-    for(angle = 30; angle < 180; angle += 5)
-    {                                  
-        servo_handler.write(angle);
-        delay(10);                       
-    } 
+  creature_servo.attach(SERVO_PIN);
+}
+
+void TurnOffSwitch( void )
+{
+  for(current_angle; current_angle < 180; current_angle += 5)
+  {                                  
+    creature_servo.write(current_angle);
+    delay(10);
+  } 
+}
+
+void GetBackInside( void )
+{
+  for(current_angle; current_angle>=1; current_angle-=5)
+  {                                
+    creature_servo.write(current_angle);
+    delay(5);                       
+  } 
 }
