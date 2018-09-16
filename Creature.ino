@@ -3,6 +3,7 @@
 
 /************************** VARIABLES *************************/
 static unsigned char current_angle = INIT_ANGLE;
+static unsigned short int delay_val = 0;
 static Servo creature_servo;
 
 /************************** FUNCTIONS *************************/
@@ -36,28 +37,30 @@ void Tease( void )
     creature_servo.write(current_angle);
     delay(5);
   }
-  delay(500);
+  delay_val = random(5, 11) * 100;
+  delay(delay_val);
 
   for(current_angle; current_angle>=140; current_angle-=5)
   {                                
     creature_servo.write(current_angle);
     delay(5);                       
   }
-  delay(200);
+  delay_val = random(3, 7) * 100;
+  delay(delay_val);
 
   for(current_angle; current_angle <= 165; current_angle += 5)
   {                                  
     creature_servo.write(current_angle);
     delay(5);
   }
-  delay(500);
+  delay_val = random(5, 11) * 100;
+  delay(delay_val);
 
   for(current_angle; current_angle>=140; current_angle-=5)
   {                                
     creature_servo.write(current_angle);
     delay(5);                       
   }
-  delay(200);
 
   for(current_angle; current_angle>=INIT_ANGLE; current_angle-=5)
   {                                
