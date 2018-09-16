@@ -28,3 +28,40 @@ void GetBackInside( void )
     delay(5);                       
   } 
 }
+
+void Tease( void )
+{
+  for(current_angle; current_angle <= 165; current_angle += 5)
+  {                                  
+    creature_servo.write(current_angle);
+    delay(5);
+  }
+  delay(500);
+
+  for(current_angle; current_angle>=140; current_angle-=5)
+  {                                
+    creature_servo.write(current_angle);
+    delay(5);                       
+  }
+  delay(200);
+
+  for(current_angle; current_angle <= 165; current_angle += 5)
+  {                                  
+    creature_servo.write(current_angle);
+    delay(5);
+  }
+  delay(500);
+
+  for(current_angle; current_angle>=140; current_angle-=5)
+  {                                
+    creature_servo.write(current_angle);
+    delay(5);                       
+  }
+  delay(200);
+
+  for(current_angle; current_angle>=INIT_ANGLE; current_angle-=5)
+  {                                
+    creature_servo.write(current_angle);
+    delay(5);                       
+  }
+}
