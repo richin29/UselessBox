@@ -3,25 +3,29 @@
 /**************************************************************/
 
 /************************** INCLUDES **************************/
+#include "StdTypes.h"
+//#include "ButtonMng.h"
 
 /************************** DEFINES ***************************/
-#define BUTTON_PIN         ((unsigned char) 2)
-#define SERVO_PIN          ((unsigned char) 3)
-#define INIT_ANGLE         ((unsigned short int) 60)
-#define IDLE_TIME          ((unsigned long) 300000)
-#define TEASE_TIME         ((unsigned long) 5000)
-#define MIN_TEASE_PRESSES  ((unsigned char) 3)
-#define NUM_TEASES         ((unsigned char) 2)
+#define BUTTON_PIN         ((uint8) 2)
+#define SERVO_PIN          ((uint8) 3)
+#define INIT_ANGLE         ((uint8) 30)
+#define END_ANGLE          ((uint8) 160)
+#define IDLE_TIME          ((uint64) 300000)
+#define TEASE_TIME         ((uint64) 5000)
+#define MIN_TEASE_PRESSES  ((uint8) 3)
+#define NUM_TEASES         ((uint8) 2)
 
 /************************** VARIABLES *************************/
-unsigned char button_press_count = 0;
-static int button_val;
-static unsigned long elapsed_time = 0;
-static unsigned char num_teases = 0;
+uint8 button_press_count = 0;
+static uint32 button_val;
+static uint64 elapsed_time = 0;
+static uint8 num_teases = 0;
 
 /************************** FUNCTIONS *************************/
 void setup() 
 {
+  //CreateButton(0, BUTTON_PIN, INPUT_PULLUP);
   pinMode(BUTTON_PIN, INPUT_PULLUP);
   CreateCreature();
 } 

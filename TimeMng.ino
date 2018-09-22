@@ -1,8 +1,9 @@
 /************************** INCLUDES **************************/
+#include "StdTypes.h"
 
 /************************** VARIABLES *************************/
-static unsigned long timemng_start_time = millis();
-static unsigned long timemng_current_time = 0;
+static uint64 timemng_start_time = millis();
+static uint64 timemng_current_time = 0;
 
 /************************** FUNCTIONS *************************/
 void ResetTime( void )
@@ -10,7 +11,7 @@ void ResetTime( void )
   timemng_start_time = millis();
 }
 
-unsigned long GetElapsedTime( void )
+uint64 GetElapsedTime( void )
 {
   timemng_current_time = millis();
   
