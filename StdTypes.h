@@ -1,4 +1,6 @@
 /************************** INCLUDES **************************/
+#ifndef STD_TYPES_H
+#define STD_TYPES_H
 
 /************************** DEFINES ***************************/
 typedef unsigned char      uint8;
@@ -14,3 +16,5 @@ typedef signed long        sint64;
 /************************** VARIABLES *************************/
 
 /************************** FUNCTIONS *************************/
+
+#endif /* STD_TYPES_H */
